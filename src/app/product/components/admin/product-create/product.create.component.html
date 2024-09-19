@@ -1,0 +1,53 @@
+<div class="container">
+  <form [formGroup]="productForm" (ngSubmit)="onSubmit()">
+    <div class="row">
+      <div class="col-md-6">
+        <label for="name" class="form-label">Nome</label>
+        <input id="name" class="form-control" formControlName="name" required>
+
+        <label for="description" class="form-label">Descrição</label>
+        <textarea id="description" class="form-control" formControlName="description"></textarea>
+
+        <label for="price" class="form-label">Preço</label>
+        <input id="price" type="number" class="form-control" formControlName="price" required>
+
+        <label for="category" class="form-label">Categoria</label>
+        <input id="category" class="form-control" formControlName="category">
+
+        <label for="brand" class="form-label">Marca</label>
+        <input id="brand" class="form-control" formControlName="brand">
+
+        <label for="quantityInStock" class="form-label">Quantidade em Estoque</label>
+        <input id="quantityInStock" type="number" class="form-control" formControlName="quantityInStock">
+      </div>
+
+      <div class="col-md-6">
+        <label for="sku" class="form-label">SKU</label>
+        <input id="sku" class="form-control" formControlName="sku" required>
+
+        <label for="weight" class="form-label">Peso (kg)</label>
+        <input id="weight" type="number" step="0.01" class="form-control" formControlName="weight">
+
+        <label for="dimensions" class="form-label">Dimensões</label>
+        <input id="dimensions" class="form-control" formControlName="dimensions">
+
+        <label for="color" class="form-label">Cor</label>
+        <input id="color" class="form-control" formControlName="color">
+
+        <label for="imageUrl" class="form-label">URL da Imagem</label>
+        <input id="imageUrl" class="form-control" formControlName="imageUrl">
+
+        <label for="status" class="form-label">Status</label>
+        <select id="status" class="form-control" formControlName="status">
+          <option value="Disponível">Disponível</option>
+          <option value="Indisponível">Indisponível</option>
+        </select>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-secondary m-2" data-bs-dismiss="modal" (click)="goList()">Close</button>
+      <button type="submit" class="btn btn-primary" [disabled]="productForm.invalid">Registrar Produto</button>
+    </div>
+  </form>
+
+</div>

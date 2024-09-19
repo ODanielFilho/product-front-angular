@@ -1,0 +1,9 @@
+<div class="section container">
+  <div class="row">
+    @for (product of products | async; track product.id){
+      <div class="col-md-3">
+        <app-product-card [product]="product" (action)="goDetail($event)"></app-product-card>
+      </div>
+    }
+  </div>
+</div>

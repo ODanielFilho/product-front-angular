@@ -1,0 +1,29 @@
+<section class="container">
+  <div class="row">
+    <div class="col md-6">
+      <img src="{{product.imageUrl}}"  alt="{{product.name}}">
+    </div>
+    <div class="col md-6">
+      <h2>{{product.name}}</h2>
+      <h5>{{product.sku}}</h5>
+      <h6>Descrição</h6>
+      <p>{{product.description}}</p>
+      <h6>Cor</h6>
+      <p>{{product.color}}</p>
+      <h6>Medidas</h6>
+      <p>{{product.dimensions}}</p>
+      <h6>Marca</h6>
+      <p>{{product.brand}}</p>
+      <h6>Categoria</h6>
+      <p>{{product.category}}</p>
+      <h6>Peso(kg)</h6>
+      <p>{{product.weight}}</p>
+      <h6>Peças em estoque</h6>
+      <p>{{product.quantityInStock}}</p>
+      <h6>Status</h6>
+      <p>{{product.status}}</p>
+      <h6>Preço</h6>
+      <p>{{product.price | currency:'BRL' :'symbol':'1.2-2'}}</p>
+    </div>
+  </div>
+</section>

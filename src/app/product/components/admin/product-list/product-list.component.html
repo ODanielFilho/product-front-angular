@@ -1,0 +1,42 @@
+<section class="container">
+  <div class="add-item">
+    <add-button (click)="goCreate()"></add-button>
+  </div>
+  <table class="table table-striped table-bordered">
+    <thead>
+    <tr>
+      <th scope="col">Imagem</th>
+      <th scope="col">Nome</th>
+      <th scope="col">Descrição</th>
+      <th scope="col">Preço</th>
+      <th scope="col">Categoria</th>
+      <th scope="col">Marca</th>
+      <th scope="col">Qt. em Estoque</th>
+      <th scope="col">SKU</th>
+      <th scope="col">Status</th>
+      <th scope="col">Action</th>
+    </tr>
+    </thead>
+    <tbody>
+      @for (product of products | async; track product.id){
+        <tr scope="row">
+          <td><img (click)="goEdit(product.id)" class="img-fluid" src="{{ product.imageUrl }}" alt="{{ product.name }}" width="50"></td>
+          <td (click)="goEdit(product.id)">{{ product.name }}</td>
+          <td>{{ product.description }}</td>
+          <td>{{ product.price }}</td>
+          <td>{{ product.category }}</td>
+          <td>{{ product.brand }}</td>
+          <td>{{ product.quantityInStock }}</td>
+          <td>{{ product.sku }}</td>
+          <td>{{ product.status }}</td>
+          <td class="actions">
+            <edit-button class="m-1" (btnClick)="goEdit(product.id)"></edit-button>
+            <delete-button class="m-1" (btnClick)="delete(product.id)"></delete-button>
+          </td>
+        </tr>
+      }
+    </tbody>
+  </table>
+
+</section>
+
